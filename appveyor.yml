@@ -1,7 +1,6 @@
 version: 1.0.{build}
 image:
-- Visual Studio 2017 Preview
-- ubuntu
+- Visual Studio 2017
 skip_tags: true
 dotnet_csproj:
   patch: true
