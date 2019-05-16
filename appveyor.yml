@@ -12,17 +12,12 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: FF5dP0+mIN5AIn9T92SuuUHxJ+eb97nDC7yg4lHTAhH7hnI+CjKzpLboeWm9M0j8
 install:
-- sh: printf "Commands with sh Prefix run on Linux image only"
-- sh: sudo apt-get update
-- sh: sudo apt-get install dotnet-sdk-2.1.300-rc1-008673 -y
-- sh: sudo apt-get install dotnet-runtime-2.1.0-rc1 -y
 build_script:
   - dotnet build -c Release
 test_script:
 - ps: >-
 
-    dotnet tool install coveralls.net --version 1.0.0-beta0003 --tool-path "${pwd}/tools"
+    dotnet tool install coveralls.net --version 1.0.0 --tool-path "${pwd}/tools"
 
     dotnet test src\GameOfLife.xUnit.Tests\GameOfLife.xUnit.Tests.csproj"" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutputDirectory=../../
 - cmd: .\tools\csmacnz.Coveralls.exe --opencover -i coverage.xml --useRelativePaths
-- sh: ./tools/csmacnz.Coveralls --opencover -i coverage.xml --useRelativePaths
