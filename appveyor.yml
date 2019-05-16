@@ -11,7 +11,7 @@ dotnet_csproj:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   COVERALLS_REPO_TOKEN:
-    secure: T4HU+3zXxONb3hR4a+rJbE0MctjwMjlbHrYVBaU4BRXp9OAWygYlNUnDZZkG7vHk
+    secure: FF5dP0+mIN5AIn9T92SuuUHxJ+eb97nDC7yg4lHTAhH7hnI+CjKzpLboeWm9M0j8
 install:
 - sh: printf "Commands with sh Prefix run on Linux image only"
 - sh: sudo apt-get update
